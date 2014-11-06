@@ -36,6 +36,14 @@ function setName(name)
     extn.Name = name
 end
 
+function getVersion()
+    extn.Version
+end
+
+function getDescription()
+    extn.Description
+end
+
 function getId()
     extn.Id
 end
