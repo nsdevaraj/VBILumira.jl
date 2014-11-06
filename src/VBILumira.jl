@@ -81,7 +81,7 @@ function createLumiraExtension()
         run (`createFolderStruct.bat`)
         run (`rm createFolderStruct.bat`)		
         createChartCode(string(extn.Id,"/","bundles","/",pathFormer,folderPath,"-bundle.js"))
-        createFeatureCode(string(extn.Id,"/","features",folderPath,"-feature.json"))
+        createFeatureCode(string(extn.Id,"/","features","/",folderPath,"-feature.json"))
         createTemplate(string(extn.Id,"/","bundles","/",pathFormer,templatePathFormer,"template.js"))
         
         run(`rm tempplots.svg`)
