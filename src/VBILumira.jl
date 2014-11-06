@@ -80,8 +80,8 @@ function createLumiraExtension()
         
         run (`createFolderStruct.bat`)
         run (`rm createFolderStruct.bat`)		
-        createFeatureCode(string(extn.Id,"/","features","/",pathFormer,folderPath,"-feature.json"))
         createChartCode(string(extn.Id,"/","bundles","/",pathFormer,folderPath,"-bundle.js"))
+        createFeatureCode(string(extn.Id,"/","features","/",pathFormer,folderPath,"-feature.json"))
         createTemplate(string(extn.Id,"/","bundles","/",pathFormer,templatePathFormer,"template.js"))
         
         run(`rm tempplots.svg`)
@@ -523,6 +523,7 @@ function createFeatureCode(folderPath)
 "		]\n",
 "	}\n"
 )
+
 	if fileotpt.flag==true
         file = open(path,"w")
         write(file,jsonCodeString)
@@ -531,6 +532,7 @@ function createFeatureCode(folderPath)
         true
     end    
 end
+
 function createTemplate(path)
     templateCode = string("var sampleTemplate = \n",
 "{\n",
