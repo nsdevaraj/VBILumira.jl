@@ -1,4 +1,4 @@
-using Lumira
+using VBILumira
 using Gadfly
 
 plot = plot([sin,cos], 5, 25)
