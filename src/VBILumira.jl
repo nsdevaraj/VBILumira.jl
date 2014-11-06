@@ -517,7 +517,7 @@ function createFeatureCode(folderPath)
 "		],\n",
 "		\"bundles\": [\n",
 "			{\n",
-"				"id": \"",extn.Id,"\",\n",
+"				\"id\": \"",extn.Id,"\",\n",
 "				\"version\": \"1.0.0.0\"\n",
 "			}\n",
 "		]\n",
