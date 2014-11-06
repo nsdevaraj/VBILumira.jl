@@ -121,43 +121,6 @@ function parseXML()
     end    
 end
 
-function createFeatureCode(folderPath)
-    if fileotpt.flag==true
-        file = open(folderPath,"w")
-    end     
-	
-	jsonCodeString = string("{\n",
-"	 \"metadataVersion\" : \"1.0\",\n",
-"	 \"id\" : \"",extn.Id,"\",\n",
-"	 \"name\" : \"",extn.Name,"\",\n", 
-"	 \"description\" : \"Custom Chart\",\n", 
-"	 \"version\" : \"1.0.0.0\",\n", 
-"		\"vendor\": {\n",
-"			\"name\": \"SAP\",\n",
-"			\"url\": \"www.sap.com\"\n",
-"		},\n",
-"		\"requires\": [\n",
-"			{\n",
-"				\"id\": \"sap.viz.common.core\",\n",
-"				\"version\": \"4.0.18\"\n",
-"			}\n",
-"		],\n",
-"		\"bundles\": [\n",
-"			{\n",
-"				"id": \"",extn.Id,"\",\n",
-"				\"version\": \"1.0.0.0\"\n",
-"			}\n",
-"		]\n",
-"	}\n"
-)
-	if fileotpt.flag==true
-        write(file,jsonCodeString)
-        close(file)
-    else
-        return true
-    end    
-end
-
 function createChartCode(folderPath)
     if fileotpt.flag==true
         file = open(folderPath,"w")
@@ -535,6 +498,39 @@ function createChartCode(folderPath)
     end    
 end
 
+function createFeatureCode(folderPath)
+	jsonCodeString = string("{\n",
+"	 \"metadataVersion\" : \"1.0\",\n",
+"	 \"id\" : \"",extn.Id,"\",\n",
+"	 \"name\" : \"",extn.Name,"\",\n", 
+"	 \"description\" : \"Custom Chart\",\n", 
+"	 \"version\" : \"1.0.0.0\",\n", 
+"		\"vendor\": {\n",
+"			\"name\": \"SAP\",\n",
+"			\"url\": \"www.sap.com\"\n",
+"		},\n",
+"		\"requires\": [\n",
+"			{\n",
+"				\"id\": \"sap.viz.common.core\",\n",
+"				\"version\": \"4.0.18\"\n",
+"			}\n",
+"		],\n",
+"		\"bundles\": [\n",
+"			{\n",
+"				"id": \"",extn.Id,"\",\n",
+"				\"version\": \"1.0.0.0\"\n",
+"			}\n",
+"		]\n",
+"	}\n"
+)
+	if fileotpt.flag==true
+        file = open(path,"w")
+        write(file,jsonCodeString)
+        close(file)
+    else
+        true
+    end    
+end
 function createTemplate(path)
     templateCode = string("var sampleTemplate = \n",
 "{\n",
