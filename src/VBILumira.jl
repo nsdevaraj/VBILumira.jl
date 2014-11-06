@@ -498,7 +498,7 @@ function createChartCode(folderPath)
     end    
 end
 
-function createFeatureCode(folderPath)
+function createFeatureCode(path)
 	jsonCodeString = string("{\n",
 "	 \"metadataVersion\" : \"1.0\",\n",
 "	 \"id\" : \"",extn.Id,"\",\n",
