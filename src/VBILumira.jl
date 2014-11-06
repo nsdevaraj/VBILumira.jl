@@ -17,7 +17,7 @@ type flagToWriteToFile
     flag::Bool
 end    
 
-extn = LumiraExtension("","") 
+extn = LumiraExtension("","","","") 
 fileotpt = flagToWriteToFile(true)
 
 function setId(identifier)
