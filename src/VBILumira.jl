@@ -4,13 +4,13 @@ module VBILumira
 using Gadfly
 using Base.show
 
-export setId,setName,setVersion,setDescription,getId,getName,setToWriteToFile,exportToSVG,createTemplate,createChartCode,createFeatureCode,createLumiraExtension
+export setId,setName,setVersion,setDescription,getId,getName,getVersion,getDescription,setToWriteToFile,exportToSVG,createTemplate,createChartCode,createFeatureCode,createLumiraExtension
 
 type LumiraExtension
     Id::String
     Name::String
-    Description::String
     Version::String
+    Description::String
 end
 
 type flagToWriteToFile
@@ -20,16 +20,16 @@ end
 extn = LumiraExtension("","") 
 fileotpt = flagToWriteToFile(true)
 
+function setId(identifier)
+	extn.Id = identifier
+end
+
 function setDescription(description)
 	extn.Description = description
 end
 
 function setVersion(version)
 	extn.Version = version
-end
-
-function setId(identifier)
-	extn.Id = identifier
 end
 
 function setName(name)
