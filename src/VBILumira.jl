@@ -4,7 +4,7 @@ module VBILumira
 using Gadfly
 using Base.show
 
-export setId,setName,getId,getName,setToWriteToFile,exportToSVG,createTemplate,createChartCode,createLumiraExtension
+export setId,setName,getId,getName,setToWriteToFile,exportToSVG,createTemplate,createChartCode,createFeatureCode,createLumiraExtension
 
 type LumiraExtension
     Id::String
