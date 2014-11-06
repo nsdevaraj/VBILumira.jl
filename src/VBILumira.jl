@@ -4,11 +4,13 @@ module VBILumira
 using Gadfly
 using Base.show
 
-export setId,setName,getId,getName,setToWriteToFile,exportToSVG,createTemplate,createChartCode,createFeatureCode,createLumiraExtension
+export setId,setName,setVersion,setDescription,getId,getName,setToWriteToFile,exportToSVG,createTemplate,createChartCode,createFeatureCode,createLumiraExtension
 
 type LumiraExtension
     Id::String
     Name::String
+    Description::String
+    Version::String
 end
 
 type flagToWriteToFile
@@ -17,6 +19,14 @@ end
 
 extn = LumiraExtension("","") 
 fileotpt = flagToWriteToFile(true)
+
+function setDescription(description)
+	extn.Description = description
+end
+
+function setVersion(version)
+	extn.Version = version
+end
 
 function setId(identifier)
 	extn.Id = identifier
@@ -500,11 +510,11 @@ end
 
 function createFeatureCode(path)
 	jsonCodeString = string("{\n",
-"	 \"metadataVersion\" : \"1.0\",\n",
+"	 \"metadataVersion\" : \"",extn.Version,"\",\n",
 "	 \"id\" : \"",extn.Id,"\",\n",
 "	 \"name\" : \"",extn.Name,"\",\n", 
-"	 \"description\" : \"Custom Chart\",\n", 
-"	 \"version\" : \"1.0.0.0\",\n", 
+"	 \"description\" : \"",extn.Description,"\",\n",
+"	 \"version\" : \"",extn.Version,"\",\n",
 "		\"vendor\": {\n",
 "			\"name\": \"SAP\",\n",
 "			\"url\": \"www.sap.com\"\n",
@@ -518,7 +528,7 @@ function createFeatureCode(path)
 "		\"bundles\": [\n",
 "			{\n",
 "				\"id\": \"",extn.Id,"\",\n",
-"				\"version\": \"1.0.0.0\"\n",
+"				\"version\": \"",extn.Version,"\",\n",
 "			}\n",
 "		]\n",
 "	}\n"

@@ -7,4 +7,6 @@ exportToSVG(plot)
 
 setId("trigo")
 setName("HelloWorld1")
+setVersion("1.0.0.0")
+setDescription("Sample Chart")
 createLumiraExtension()

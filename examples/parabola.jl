@@ -7,4 +7,6 @@ exportToSVG(plot)
 
 setId("comsapsbcd90helloworld")
 setName("HelloWorldParaBola")
+setVersion("1.0.0.0")
+setDescription("Sample Chart")
 createLumiraExtension()
